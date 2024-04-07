@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Reflection.Metadata.Ecma335;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 
 // PinChess Bot Implementation
@@ -22,27 +23,23 @@ public class MyBot : IChessBot
 
         Move[] botMoves = board.GetLegalMoves();
         // Gets each move and displays PieceType and Move's start and end square
+        Console.WriteLine("IsWhiteToMove: {0}", board.IsWhiteToMove);
         Console.WriteLine("BOT MOVES");
         foreach (Move move in board.GetLegalMoves())
         {
-            // Console.WriteLine("Move: {0} - {1}", move.MovePieceType, move);
-            if (move.MovePieceType.Equals(PieceType.Pawn)) {
-                Console.WriteLine("TARGET SQUARE {0}: FILE {1} | RANK {2}", move, move.TargetSquare.File, move.TargetSquare.Rank);
-                Console.WriteLine("PAWN POSITION EVAL: {0}", PestoEval(board, move, board.IsWhiteToMove));
-            }
+            PieceType pieceType = move.MovePieceType;
+            Console.WriteLine("TARGET SQUARE {0}: FILE {1} | RANK {2}", move, move.TargetSquare.File, move.TargetSquare.Rank);
+            Console.WriteLine("POSITION EVALUATION: {0}", PestoEval(board, move, board.IsWhiteToMove, pieceType));
         }
-        Console.WriteLine("MOVE PLAYED: {0} - {1}", botMoves[0].MovePieceType, botMoves[0]);
+        Console.WriteLine("MOVE PLAYED BY BOT: {0} - {1}", botMoves[0].MovePieceType, botMoves[0]);
         
         board.TrySkipTurn();
-        Console.WriteLine("IsWhiteToMove: {0}", board.IsWhiteToMove);
         Console.WriteLine("HUMAN MOVES");
         foreach (Move move in board.GetLegalMoves())
         {
-            // Console.WriteLine("Move: {0} - {1}", move.MovePieceType, move);
-            if (move.MovePieceType.Equals(PieceType.Pawn)) {
-                Console.WriteLine("TARGET SQUARE {0}: FILE {1} | RANK {2}", move, move.TargetSquare.File, move.TargetSquare.Rank);
-                Console.WriteLine("PAWN POSITION EVAL: {0}", PestoEval(board, move, board.IsWhiteToMove));
-            }
+            PieceType pieceType = move.MovePieceType;
+            Console.WriteLine("TARGET SQUARE {0}: FILE {1} | RANK {2}", move, move.TargetSquare.File, move.TargetSquare.Rank);
+            Console.WriteLine("POSITION EVALUATION: {0}", PestoEval(board, move, board.IsWhiteToMove, pieceType));
         }
         board.UndoSkipTurn();
 
@@ -92,16 +89,17 @@ public class MyBot : IChessBot
         return evaluation;
     }
 
-    private int PestoEval(Board board, Move move, bool player)
+    private int PestoEval(Board board, Move move, bool player, PieceType pieceType)
 		{
 			int eval = 0;
-			if (move.MovePieceType.Equals(PieceType.Pawn)){
-                if (player) {eval += PawnTable[PawnTable.GetUpperBound(0) + move.TargetSquare.Rank * -1, move.TargetSquare.File];}
-                else {eval += PawnTable[move.TargetSquare.Rank, move.TargetSquare.File] * -1;}
-			}
-			else if (move.MovePieceType.Equals(PieceType.Knight)){
-				eval += KnightTable[KnightTable.GetUpperBound(0) + move.TargetSquare.Rank * -1, move.TargetSquare.File];
-			}
+            int[,] SquareTable = GetSquareTable(move);
+            if (player)
+            {
+                eval += SquareTable[SquareTable.GetUpperBound(0) + move.TargetSquare.Rank * -1, move.TargetSquare.File];
+            }
+            else {
+                eval += SquareTable[move.TargetSquare.Rank, SquareTable.GetUpperBound(0) + move.TargetSquare.File * -1] * -1;
+            }
 			return eval;
 	}
 
@@ -114,6 +112,16 @@ public class MyBot : IChessBot
         material += board.GetPieceList(PieceType.Rook, player).Count * pieceValues[4];
         material += board.GetPieceList(PieceType.Queen, player).Count * pieceValues[5];
         return material;
+    }
+
+    static int[,] GetSquareTable(Move move)
+    {
+        if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
+        else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
+        else if (move.MovePieceType.Equals(PieceType.Bishop)){return BishopTable;}
+        else if (move.MovePieceType.Equals(PieceType.Rook)){return RookTable;}
+        else if (move.MovePieceType.Equals(PieceType.Queen)){return QueenTable;}
+        else{return KingTable;}
     }
 
 }
