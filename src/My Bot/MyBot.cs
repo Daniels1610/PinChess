@@ -16,7 +16,6 @@ public class MyBot : IChessBot
     
     // Piece values: null, pawn, knight, bishop, rook, queen, king
     static int[] pieceValues = { 0, 10, 30, 30, 50, 90, 1000 };
-    int depth = 3;
 
     public Move Think(Board board, Timer timer)
     {
@@ -28,7 +27,7 @@ public class MyBot : IChessBot
         foreach (Move move in board.GetLegalMoves())
         {
             PieceType pieceType = move.MovePieceType;
-            Console.WriteLine("TARGET SQUARE {0}: FILE {1} | RANK {2}", move, move.TargetSquare.File, move.TargetSquare.Rank);
+            Console.WriteLine("{0} {1}: FILE {2} | RANK {3}", pieceType,move, move.TargetSquare.File, move.TargetSquare.Rank);
             Console.WriteLine("POSITION EVALUATION: {0}", PestoEval(board, move, board.IsWhiteToMove, pieceType));
         }
         Console.WriteLine("MOVE PLAYED BY BOT: {0} - {1}", botMoves[0].MovePieceType, botMoves[0]);
@@ -38,7 +37,7 @@ public class MyBot : IChessBot
         foreach (Move move in board.GetLegalMoves())
         {
             PieceType pieceType = move.MovePieceType;
-            Console.WriteLine("TARGET SQUARE {0}: FILE {1} | RANK {2}", move, move.TargetSquare.File, move.TargetSquare.Rank);
+            Console.WriteLine("{0} - {1}: FILE {2} | RANK {3}", pieceType,move, move.TargetSquare.File, move.TargetSquare.Rank);
             Console.WriteLine("POSITION EVALUATION: {0}", PestoEval(board, move, board.IsWhiteToMove, pieceType));
         }
         board.UndoSkipTurn();

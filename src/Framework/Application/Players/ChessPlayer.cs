@@ -8,6 +8,8 @@ namespace ChessChallenge.Application
         // public event Action<Chess.Core.Move>? MoveChosen;
 
         public readonly ChallengeController.PlayerType PlayerType;
+
+        #nullable enable
         public readonly IChessBot? Bot;
         public readonly HumanPlayer? Human;
 

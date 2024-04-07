@@ -68,7 +68,7 @@ namespace ChessChallenge.Chess
         bool cachedInCheckValue;
         bool hasCachedInCheckValue;
 
-
+        #nullable enable
         public Board(Board? source = null)
         {
             if (source != null)
