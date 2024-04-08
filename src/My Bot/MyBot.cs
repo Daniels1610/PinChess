@@ -1,51 +1,54 @@
 using System;
-using Raylib_cs;
-using System.Linq;
 using ChessChallenge.API;
 using static PieceSquareTables;
-using System.Runtime.InteropServices;
-using System.Reflection.Metadata.Ecma335;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
-
 
 // PinChess Bot Implementation
 public class MyBot : IChessBot
 {
     
     // Piece values: null, pawn, knight, bishop, rook, queen, king
-    static int[] pieceValues = { 0, 10, 30, 30, 50, 90, 1000 };
-    int depth = 3;
+    static readonly int[] pieceValues = { 0, 10, 30, 30, 50, 90, 1000 };
+    readonly int depth = 1;
 
     public Move Think(Board board, Timer timer)
     {
+        Move[] possibleMoves = board.GetLegalMoves();
+        Move bestMove = Move.NullMove;
+        int bestWhiteEval = -10000;
+        int bestBlackEval = 10000;
+        int miniMaxBestEval = 0;
+        int MMEval;
 
-        Move[] botMoves = board.GetLegalMoves();
         // Gets each move and displays PieceType and Move's start and end square
         Console.WriteLine("IsWhiteToMove: {0}", board.IsWhiteToMove);
         Console.WriteLine("BOT MOVES");
         foreach (Move move in board.GetLegalMoves())
         {
-            PieceType pieceType = move.MovePieceType;
+            MMEval = Minimax(board, depth, move, miniMaxBestEval);
+            
+            // Check if move is a checkmate
+            if (MoveIsCheckmate(board, move))
+                {
+                    bestMove = move;
+                    break;
+                }
+            // MMEval = PestoEval(move, board.IsWhiteToMove);
+            if (board.IsWhiteToMove && MMEval > bestWhiteEval) {
+                bestWhiteEval = MMEval;
+                bestMove = move;
+            }
+            else if (!board.IsWhiteToMove && (MMEval < bestBlackEval)) {
+                bestBlackEval = MMEval;
+                bestMove = move;
+            }
+            
             Console.WriteLine("TARGET SQUARE {0}: FILE {1} | RANK {2}", move, move.TargetSquare.File, move.TargetSquare.Rank);
-            Console.WriteLine("POSITION EVALUATION: {0}", PestoEval(board, move, board.IsWhiteToMove, pieceType));
+            Console.WriteLine("POSITION EVALUATION: {0}", MMEval);
         }
-        Console.WriteLine("MOVE PLAYED BY BOT: {0} - {1}", botMoves[0].MovePieceType, botMoves[0]);
+        Console.WriteLine("MOVE PLAYED BY BOT: {0} - {1}", bestMove.MovePieceType, bestMove);
         
-        board.TrySkipTurn();
-        Console.WriteLine("HUMAN MOVES");
-        foreach (Move move in board.GetLegalMoves())
-        {
-            PieceType pieceType = move.MovePieceType;
-            Console.WriteLine("TARGET SQUARE {0}: FILE {1} | RANK {2}", move, move.TargetSquare.File, move.TargetSquare.Rank);
-            Console.WriteLine("POSITION EVALUATION: {0}", PestoEval(board, move, board.IsWhiteToMove, pieceType));
-        }
-        board.UndoSkipTurn();
-
-        // int bestMove = Search(board, depth);
-        // Console.WriteLine("BestEvalMove: {0}", bestMove);
-        return botMoves[0];
+        // board.MakeMove(bestMove);
+        return bestMove;
     }
 
     // Evaluation function should check for:
@@ -55,41 +58,52 @@ public class MyBot : IChessBot
     //   - Pawn Structure
     //   - Tactics (Gambits, Pins, Forks, Skewers)
 
-    int Search(Board board, int depth) 
+    private int Minimax(Board board, int depth, Move move, int miniMaxBestEval) 
     {
-        if (depth == 0) {
-            return Evaluate(board);
-        }
-        Move[] moves = board.GetLegalMoves();
-        if (moves.Length == 0) {
-            if (board.IsInCheck()) {
-                return int.MinValue;
-            }
-            return 0;
+        if (board.IsInCheckmate() || depth == 0) 
+        {
+            return Evaluate(board, move);
         }
 
-        int bestEvaluation = int.MinValue;
-        foreach (Move move in moves) {
-            board.MakeMove(move);
-            int evaluation = - Search(board, depth-1);
-            bestEvaluation = Math.Max(evaluation, bestEvaluation);
-            board.UndoMove(move);
+        if (board.IsWhiteToMove)
+        {
+            int best = -10000;
+            foreach (Move evalMove in board.GetLegalMoves())
+            {
+                int val = Minimax(board, depth-1, evalMove, miniMaxBestEval);
+                if (val > best)
+                {
+                    best = val;
+                    miniMaxBestEval = best;
+                }
+            }
         }
-        return bestEvaluation;
+
+        else {
+            int best = 10000;
+
+            foreach (Move evalMove in board.GetLegalMoves())
+            {
+                int val = Minimax(board, depth-1, evalMove, miniMaxBestEval);
+                if (val < best) 
+                {
+                    best = val;
+                    miniMaxBestEval = best;
+                }
+            }
+        }
+        return miniMaxBestEval;
     }
 
-    int Evaluate(Board board)
+    int Evaluate(Board board, Move move)
     {
         int whiteMaterial = CountMaterial(board, true);
         int blackMaterial = CountMaterial(board, false) * -1;
-
-        int evaluation = whiteMaterial + blackMaterial;
-        Console.WriteLine("Evaluation: {0}", evaluation);
-
+        int evaluation = whiteMaterial + blackMaterial + PestoEval(move, board.IsWhiteToMove);
         return evaluation;
     }
 
-    private int PestoEval(Board board, Move move, bool player, PieceType pieceType)
+    private static int PestoEval(Move move, bool player)
 		{
 			int eval = 0;
             int[,] SquareTable = GetSquareTable(move);
@@ -124,4 +138,12 @@ public class MyBot : IChessBot
         else{return KingTable;}
     }
 
+    bool MoveIsCheckmate(Board board, Move move)
+        {
+            board.MakeMove(move);
+            bool isMate = board.IsInCheckmate();
+            board.UndoMove(move);
+            return isMate;
+        }
+    
 }
