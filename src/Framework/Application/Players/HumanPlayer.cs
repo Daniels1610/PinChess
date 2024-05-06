@@ -6,6 +6,7 @@ namespace ChessChallenge.Application
 {
     public class HumanPlayer
     {
+        #nullable enable
         public event System.Action<Move>? MoveChosen;
 
         readonly Board board;
