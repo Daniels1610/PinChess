@@ -69,6 +69,7 @@ namespace ChessChallenge.Chess
         bool hasCachedInCheckValue;
 
 
+        #nullable enable
         public Board(Board? source = null)
         {
             if (source != null)
@@ -586,6 +587,5 @@ namespace ChessChallenge.Chess
             colourBitboards = new ulong[2];
             allPiecesBitboard = 0;
         }
-
     }
 }

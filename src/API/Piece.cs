@@ -43,6 +43,8 @@ namespace ChessChallenge.API
         // Comparisons:
         public static bool operator ==(Piece lhs, Piece rhs) => lhs.Equals(rhs);
         public static bool operator !=(Piece lhs, Piece rhs) => !lhs.Equals(rhs);
+
+        #nullable enable
         public override bool Equals(object? obj) => base.Equals(obj);
         public override int GetHashCode() => base.GetHashCode();
 
