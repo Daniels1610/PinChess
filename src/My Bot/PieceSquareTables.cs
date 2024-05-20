@@ -1,7 +1,3 @@
-using System.Net.NetworkInformation;
-using System.Security.Cryptography;
-using ChessChallenge.API;
-
 public static class PieceSquareTables
 {
     public static readonly int[,] PawnTable = new int[8,8]

@@ -27,7 +27,7 @@ namespace ChessChallenge.API
 		int depth;
 
 		// Piece values: null, pawn, knight, bishop, rook, queen, king
-        static readonly int[] pieceValues = { 0, 10, 30, 30, 50, 90, 1000 };
+        public static readonly int[] pieceValues = { 0, 100, 300, 320, 500, 900, 1000};
 
         /// <summary>
         /// Create a new board. Note: this should not be used in the challenge,
