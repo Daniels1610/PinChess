@@ -1,11 +1,12 @@
 namespace ChessChallenge.API
 {
 	using ChessChallenge.Application.APIHelpers;
+	using static PieceSquareTables;
 	using ChessChallenge.Chess;
 	using System;
 	using System.Collections.Generic;
-	using System.Linq;
 	using System.Text;
+	
 
 	public sealed class Board
 	{
@@ -24,6 +25,9 @@ namespace ChessChallenge.API
 		bool hasCachedMoveCount;
 		int cachedMoveCount;
 		int depth;
+
+		// Piece values: null, pawn, knight, bishop, rook, queen, king
+        static readonly int[] pieceValues = { 0, 10, 30, 30, 50, 90, 1000 };
 
         /// <summary>
         /// Create a new board. Note: this should not be used in the challenge,
@@ -464,5 +468,56 @@ namespace ChessChallenge.API
 			return moveGen.NoLegalMovesInPosition(board);
 		}
 
+		// Evaluation function should check for:
+		//   - Material Balance for both Black and White players
+		//   - Developed Pieces (Center Squares) PeSTO's Evaluation Function
+		//   - King safety
+		//   - Pawn Structure
+		//   - Tactics (Gambits, Pins, Forks, Skewers)
+
+		public int Evaluate()
+		{
+			int evaluation = 0;
+			int whiteMaterial = CountMaterial(true);
+			int blackMaterial = CountMaterial(false) * -1;
+			int materialEvaluation = whiteMaterial + blackMaterial;
+			evaluation += materialEvaluation;
+			return evaluation;
+		}
+
+        public int CountMaterial(bool player)
+        {
+            int material = 0;
+            material += GetPieceList(PieceType.Pawn, player).Count * pieceValues[1];
+            material += GetPieceList(PieceType.Knight, player).Count * pieceValues[2];
+            material += GetPieceList(PieceType.Bishop, player).Count * pieceValues[3];
+            material += GetPieceList(PieceType.Rook, player).Count * pieceValues[4];
+            material += GetPieceList(PieceType.Queen, player).Count * pieceValues[5];
+            return material;
+        }
+
+		static int[,] GetSquareTable(Move move)
+		{
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return QueenTable;}
+			else{return KingTable;}
+		}
+
+		public int PestoEvaluation(Move move, bool player)
+	    {
+			int evaluation = 0;
+			int[,] SquareTable = GetSquareTable(move);
+			if (player)
+			{
+				evaluation += SquareTable[SquareTable.GetUpperBound(0) + move.TargetSquare.Rank * -1, move.TargetSquare.File];
+			}
+			else {
+				evaluation += SquareTable[move.TargetSquare.Rank, SquareTable.GetUpperBound(0) + move.TargetSquare.File * -1] * -1;
+			}
+			return evaluation;
+	    }
     }
 }
