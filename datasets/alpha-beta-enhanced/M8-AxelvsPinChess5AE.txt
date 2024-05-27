@@ -1,0 +1,1041 @@
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 42
+
+MOVES MADE SO FAR: 42
+MOVE PLAYED BY BOT: Knight - Move: 'e6d4' : EVALUATION: 283
+ITERATIONS TO FIND OPTIMAL MOVE: 18421076
+Time Elapsed: 0.59 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 44
+
+MOVES MADE SO FAR: 44
+MOVE PLAYED BY BOT: Bishop - Move: 'c1f4' : EVALUATION: 683
+ITERATIONS TO FIND OPTIMAL MOVE: 19009779
+Time Elapsed: 1.058 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Black Knight - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 46
+
+MOVES MADE SO FAR: 46
+MOVE PLAYED BY BOT: Bishop - Move: 'f4g3' : EVALUATION: 929
+ITERATIONS TO FIND OPTIMAL MOVE: 19446301
+Time Elapsed: 0.763 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Black Knight - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 48
+
+MOVES MADE SO FAR: 48
+MOVE PLAYED BY BOT: King - Move: 'c3b4' : EVALUATION: 457
+ITERATIONS TO FIND OPTIMAL MOVE: 19526951
+Time Elapsed: 0.152 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Black Knight - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 50
+
+MOVES MADE SO FAR: 50
+MOVE PLAYED BY BOT: Bishop - Move: 'g3d6' : EVALUATION: 308
+ITERATIONS TO FIND OPTIMAL MOVE: 20578773
+Time Elapsed: 1.844 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Black Knight - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 52
+
+MOVES MADE SO FAR: 52
+MOVE PLAYED BY BOT: King - Move: 'b4a3' : EVALUATION: 388
+ITERATIONS TO FIND OPTIMAL MOVE: 20759509
+Time Elapsed: 0.308 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 54
+
+MOVES MADE SO FAR: 54
+MOVE PLAYED BY BOT: Knight - Move: 'b1c3' : EVALUATION: 460
+ITERATIONS TO FIND OPTIMAL MOVE: 21351715
+Time Elapsed: 0.986 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 56
+
+MOVES MADE SO FAR: 56
+MOVE PLAYED BY BOT: Knight - Move: 'c3e4' : EVALUATION: 399
+ITERATIONS TO FIND OPTIMAL MOVE: 22394581
+Time Elapsed: 1.78 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 58
+
+MOVES MADE SO FAR: 58
+MOVE PLAYED BY BOT: Knight - Move: 'e4c5' : EVALUATION: 1001
+ITERATIONS TO FIND OPTIMAL MOVE: 25421580
+Time Elapsed: 5.14 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 60
+
+MOVES MADE SO FAR: 60
+MOVE PLAYED BY BOT: Knight - Move: 'c5e6' : EVALUATION: 569
+ITERATIONS TO FIND OPTIMAL MOVE: 27500976
+Time Elapsed: 3.486 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 62
+
+MOVES MADE SO FAR: 62
+MOVE PLAYED BY BOT: Knight - Move: 'e6d4' : EVALUATION: 467
+ITERATIONS TO FIND OPTIMAL MOVE: 28133787
+Time Elapsed: 1.063 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 64
+
+MOVES MADE SO FAR: 64
+MOVE PLAYED BY BOT: Knight - Move: 'd4b3' : EVALUATION: 900
+ITERATIONS TO FIND OPTIMAL MOVE: 28683131
+Time Elapsed: 1.004 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: White Knight - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 66
+
+MOVES MADE SO FAR: 66
+MOVE PLAYED BY BOT: Queen - Move: 'd1e2' : EVALUATION: 662
+ITERATIONS TO FIND OPTIMAL MOVE: 29541197
+Time Elapsed: 1.446 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 68
+
+MOVES MADE SO FAR: 68
+MOVE PLAYED BY BOT: Queen - Move: 'e2e5' : EVALUATION: 781
+ITERATIONS TO FIND OPTIMAL MOVE: 30730888
+Time Elapsed: 2.002 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 70
+
+MOVES MADE SO FAR: 70
+MOVE PLAYED BY BOT: Knight - Move: 'b3d4' : EVALUATION: 1350
+ITERATIONS TO FIND OPTIMAL MOVE: 31430063
+Time Elapsed: 1.154 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 72
+
+MOVES MADE SO FAR: 72
+MOVE PLAYED BY BOT: Knight - Move: 'd4f5' : EVALUATION: 1402
+ITERATIONS TO FIND OPTIMAL MOVE: 32010107
+Time Elapsed: 0.944 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: White Knight - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 74
+
+MOVES MADE SO FAR: 74
+MOVE PLAYED BY BOT: King - Move: 'a3b3' : EVALUATION: 1128
+ITERATIONS TO FIND OPTIMAL MOVE: 32142234
+Time Elapsed: 0.247 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 76
+
+MOVES MADE SO FAR: 76
+MOVE PLAYED BY BOT: Queen - Move: 'e5d6' : EVALUATION: 1770
+ITERATIONS TO FIND OPTIMAL MOVE: 33023427
+Time Elapsed: 1.438 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 78
+
+MOVES MADE SO FAR: 78
+MOVE PLAYED BY BOT: Queen - Move: 'd6b8' : EVALUATION: 1965
+ITERATIONS TO FIND OPTIMAL MOVE: 33345260
+Time Elapsed: 0.523 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 80
+
+MOVES MADE SO FAR: 80
+MOVE PLAYED BY BOT: Queen - Move: 'b8a7' : EVALUATION: 2124
+ITERATIONS TO FIND OPTIMAL MOVE: 33452660
+Time Elapsed: 0.175 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 4
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 82
+
+MOVES MADE SO FAR: 82
+MOVE PLAYED BY BOT: Queen - Move: 'a7f7' : EVALUATION: 2167
+ITERATIONS TO FIND OPTIMAL MOVE: 33570936
+Time Elapsed: 0.195 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 3
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 84
+
+MOVES MADE SO FAR: 84
+MOVE PLAYED BY BOT: Queen - Move: 'f7f6' : EVALUATION: 2146
+ITERATIONS TO FIND OPTIMAL MOVE: 33650275
+Time Elapsed: 0.23 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 3
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 86
+
+MOVES MADE SO FAR: 86
+MOVE PLAYED BY BOT: Queen - Move: 'f6f8' : EVALUATION: 2134
+ITERATIONS TO FIND OPTIMAL MOVE: 33833277
+Time Elapsed: 0.3 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 3
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 88
+
+MOVES MADE SO FAR: 88
+MOVE PLAYED BY BOT: Queen - Move: 'f8h8' : EVALUATION: 2140
+ITERATIONS TO FIND OPTIMAL MOVE: 33956695
+Time Elapsed: 0.209 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 3
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 90
+
+MOVES MADE SO FAR: 90
+MOVE PLAYED BY BOT: Knight - Move: 'f5e7' : EVALUATION: 2020
+ITERATIONS TO FIND OPTIMAL MOVE: 34109456
+Time Elapsed: 0.253 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 3
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 92
+
+MOVES MADE SO FAR: 92
+MOVE PLAYED BY BOT: Queen - Move: 'h8g7' : EVALUATION: 2112
+ITERATIONS TO FIND OPTIMAL MOVE: 34163936
+Time Elapsed: 0.095 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 3
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 94
+
+MOVES MADE SO FAR: 94
+MOVE PLAYED BY BOT: Queen - Move: 'g7h8' : EVALUATION: 2693
+ITERATIONS TO FIND OPTIMAL MOVE: 34260582
+Time Elapsed: 0.169 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 2
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 96
+
+MOVES MADE SO FAR: 96
+MOVE PLAYED BY BOT: Pawn - Move: 'g6g7' : EVALUATION: 2815
+ITERATIONS TO FIND OPTIMAL MOVE: 34404428
+Time Elapsed: 0.241 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 2
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 98
+
+MOVES MADE SO FAR: 98
+MOVE PLAYED BY BOT: Rook - Move: 'a1h1' : EVALUATION: 2883
+ITERATIONS TO FIND OPTIMAL MOVE: 34748301
+Time Elapsed: 0.573 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 1
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 0 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 0
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 100
+
+MOVES MADE SO FAR: 100
+MOVE PLAYED BY BOT: Queen - Move: 'h8e8' : EVALUATION: 2963
+ITERATIONS TO FIND OPTIMAL MOVE: 34853144
+Time Elapsed: 0.18 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 1
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 102
+
+MOVES MADE SO FAR: 102
+MOVE PLAYED BY BOT: Pawn - Move: 'g7g8q' : EVALUATION: 2984
+ITERATIONS TO FIND OPTIMAL MOVE: 34968839
+Time Elapsed: 0.2 seconds
+
+PIECE: White Pawn - WHITE: 4 | BLACK: 1
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 104
+
+MOVES MADE SO FAR: 104
+MOVE PLAYED BY BOT: King - Move: 'b3b4' : EVALUATION: 3084
+ITERATIONS TO FIND OPTIMAL MOVE: 35126404
+Time Elapsed: 0.261 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 1
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 106
+
+MOVES MADE SO FAR: 106
+MOVE PLAYED BY BOT: Queen - Move: 'g8h7' : EVALUATION: 3125
+ITERATIONS TO FIND OPTIMAL MOVE: 35430612
+Time Elapsed: 0.511 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 108
+
+MOVES MADE SO FAR: 108
+MOVE PLAYED BY BOT: Queen - Move: 'h7h6' : EVALUATION: 3142
+ITERATIONS TO FIND OPTIMAL MOVE: 35717180
+Time Elapsed: 0.471 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 110
+
+MOVES MADE SO FAR: 110
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 3137
+ITERATIONS TO FIND OPTIMAL MOVE: 35972586
+Time Elapsed: 0.42 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 112
+
+MOVES MADE SO FAR: 112
+MOVE PLAYED BY BOT: Queen - Move: 'f7f8' : EVALUATION: 3117
+ITERATIONS TO FIND OPTIMAL MOVE: 36223755
+Time Elapsed: 0.407 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 114
+
+MOVES MADE SO FAR: 114
+MOVE PLAYED BY BOT: Queen - Move: 'f8e8' : EVALUATION: 3132
+ITERATIONS TO FIND OPTIMAL MOVE: 36495928
+Time Elapsed: 0.448 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Black King - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 116
+
+MOVES MADE SO FAR: 116
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 3137
+ITERATIONS TO FIND OPTIMAL MOVE: 36751334
+Time Elapsed: 0.422 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 118
+
+MOVES MADE SO FAR: 118
+MOVE PLAYED BY BOT: Queen - Move: 'f7f8' : EVALUATION: 3117
+ITERATIONS TO FIND OPTIMAL MOVE: 37002503
+Time Elapsed: 0.412 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 120
+
+MOVES MADE SO FAR: 120
+MOVE PLAYED BY BOT: Queen - Move: 'f8e8' : EVALUATION: 3132
+ITERATIONS TO FIND OPTIMAL MOVE: 37274676
+Time Elapsed: 0.447 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Black King - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 122
+
+MOVES MADE SO FAR: 122
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 3137
+ITERATIONS TO FIND OPTIMAL MOVE: 37568434
+Time Elapsed: 0.477 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 124
+
+MOVES MADE SO FAR: 124
+MOVE PLAYED BY BOT: Queen - Move: 'f7e8' : EVALUATION: 3134
+ITERATIONS TO FIND OPTIMAL MOVE: 37820182
+Time Elapsed: 0.417 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 126
+
+MOVES MADE SO FAR: 126
+MOVE PLAYED BY BOT: Queen - Move: 'e8g6' : EVALUATION: 3132
+ITERATIONS TO FIND OPTIMAL MOVE: 38096559
+Time Elapsed: 0.471 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Black King - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 128
+
+MOVES MADE SO FAR: 128
+MOVE PLAYED BY BOT: Queen - Move: 'h6h7' : EVALUATION: 3139
+ITERATIONS TO FIND OPTIMAL MOVE: 38264071
+Time Elapsed: 0.276 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 130
+
+MOVES MADE SO FAR: 130
+MOVE PLAYED BY BOT: Queen - Move: 'g6e8' : EVALUATION: 3099
+ITERATIONS TO FIND OPTIMAL MOVE: 38552993
+Time Elapsed: 0.473 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 132
+
+MOVES MADE SO FAR: 132
+MOVE PLAYED BY BOT: Queen - Move: 'h7g6' : EVALUATION: 3091
+ITERATIONS TO FIND OPTIMAL MOVE: 38819841
+Time Elapsed: 0.454 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 134
+
+MOVES MADE SO FAR: 134
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 3097
+ITERATIONS TO FIND OPTIMAL MOVE: 39153035
+Time Elapsed: 0.542 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 136
+
+MOVES MADE SO FAR: 136
+MOVE PLAYED BY BOT: Rook - Move: 'h1h8' : EVALUATION: 3127
+ITERATIONS TO FIND OPTIMAL MOVE: 39455063
+Time Elapsed: 0.488 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 138
+
+MOVES MADE SO FAR: 138
+MOVE PLAYED BY BOT: Queen - Move: 'f7e8' : EVALUATION: 3111
+ITERATIONS TO FIND OPTIMAL MOVE: 39882690
+Time Elapsed: 0.705 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 140
+
+MOVES MADE SO FAR: 140
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 3141
+ITERATIONS TO FIND OPTIMAL MOVE: 40251268
+Time Elapsed: 0.623 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 142
+
+MOVES MADE SO FAR: 142
+MOVE PLAYED BY BOT: Queen - Move: 'f7e8' : EVALUATION: 3169
+ITERATIONS TO FIND OPTIMAL MOVE: 40684403
+Time Elapsed: 0.709 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 144
+
+MOVES MADE SO FAR: 144
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 3109
+ITERATIONS TO FIND OPTIMAL MOVE: 41060133
+Time Elapsed: 0.622 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 146
+
+MOVES MADE SO FAR: 146
+MOVE PLAYED BY BOT: Queen - Move: 'f7e8' : EVALUATION: 3169
+ITERATIONS TO FIND OPTIMAL MOVE: 41431033
+Time Elapsed: 0.615 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 148
+
+MOVES MADE SO FAR: 148
+MOVE PLAYED BY BOT: Queen - Move: 'g6h6' : EVALUATION: 3148
+ITERATIONS TO FIND OPTIMAL MOVE: 41706153
+Time Elapsed: 0.464 seconds
+
+PIECE: White Pawn - WHITE: 3 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 150
+
+MOVES MADE SO FAR: 150
+MOVE PLAYED BY BOT: Queen - Move: 'h6f6' : EVALUATION: 2961
+ITERATIONS TO FIND OPTIMAL MOVE: 41915700
+Time Elapsed: 0.34 seconds
+
+PIECE: White Pawn - WHITE: 2 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 152
+
+MOVES MADE SO FAR: 152
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 2962
+ITERATIONS TO FIND OPTIMAL MOVE: 42218682
+Time Elapsed: 0.507 seconds
+
+PIECE: White Pawn - WHITE: 2 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 154
+
+MOVES MADE SO FAR: 154
+MOVE PLAYED BY BOT: Queen - Move: 'f7e8' : EVALUATION: 2964
+ITERATIONS TO FIND OPTIMAL MOVE: 42456369
+Time Elapsed: 0.379 seconds
+
+PIECE: White Pawn - WHITE: 2 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Black King - WHITE: 0 | BLACK: 0
+PIECE: Black King - WHITE: 1 | BLACK: 0
+PIECE: Black King - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 156
+
+MOVES MADE SO FAR: 156
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 2890
+ITERATIONS TO FIND OPTIMAL MOVE: 42702504
+Time Elapsed: 0.41 seconds
+
+PIECE: White Pawn - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 158
+
+MOVES MADE SO FAR: 158
+MOVE PLAYED BY BOT: Queen - Move: 'f6h6' : EVALUATION: 2890
+ITERATIONS TO FIND OPTIMAL MOVE: 42968813
+Time Elapsed: 0.438 seconds
+
+PIECE: White Pawn - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 160
+
+MOVES MADE SO FAR: 160
+MOVE PLAYED BY BOT: Queen - Move: 'h6f6' : EVALUATION: 2808
+ITERATIONS TO FIND OPTIMAL MOVE: 43202864
+Time Elapsed: 0.387 seconds
+
+PIECE: Black King - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 162
+
+MOVES MADE SO FAR: 162
+MOVE PLAYED BY BOT: Queen - Move: 'f7h7' : EVALUATION: 2864
+ITERATIONS TO FIND OPTIMAL MOVE: 43502037
+Time Elapsed: 0.493 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 164
+
+MOVES MADE SO FAR: 164
+MOVE PLAYED BY BOT: Queen - Move: 'f6f7' : EVALUATION: 2867
+ITERATIONS TO FIND OPTIMAL MOVE: 43795813
+Time Elapsed: 0.504 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 166
+
+MOVES MADE SO FAR: 166
+MOVE PLAYED BY BOT: Rook - Move: 'h8e8' : EVALUATION: 2840
+ITERATIONS TO FIND OPTIMAL MOVE: 44007880
+Time Elapsed: 0.353 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 168
+
+MOVES MADE SO FAR: 168
+MOVE PLAYED BY BOT: Queen - Move: 'f7f2' : EVALUATION: 2814
+ITERATIONS TO FIND OPTIMAL MOVE: 44156567
+Time Elapsed: 0.261 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Black King - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 170
+
+MOVES MADE SO FAR: 170
+MOVE PLAYED BY BOT: Rook - Move: 'e8d8' : EVALUATION: 2856
+ITERATIONS TO FIND OPTIMAL MOVE: 44374731
+Time Elapsed: 0.361 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 172
+
+MOVES MADE SO FAR: 172
+MOVE PLAYED BY BOT: Rook - Move: 'd8d7' : EVALUATION: 2865
+ITERATIONS TO FIND OPTIMAL MOVE: 44593418
+Time Elapsed: 0.354 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 174
+
+MOVES MADE SO FAR: 174
+MOVE PLAYED BY BOT: Queen - Move: 'f2f7' : EVALUATION: 2356
+ITERATIONS TO FIND OPTIMAL MOVE: 44866464
+Time Elapsed: 0.45 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 176
+
+MOVES MADE SO FAR: 176
+MOVE PLAYED BY BOT: Queen - Move: 'f7e8' : EVALUATION: 2344
+ITERATIONS TO FIND OPTIMAL MOVE: 45022526
+Time Elapsed: 0.257 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 178
+
+MOVES MADE SO FAR: 178
+MOVE PLAYED BY BOT: Knight - Move: 'e7d5' : EVALUATION: 2319
+ITERATIONS TO FIND OPTIMAL MOVE: 45161244
+Time Elapsed: 0.225 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 180
+
+MOVES MADE SO FAR: 180
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 2342
+ITERATIONS TO FIND OPTIMAL MOVE: 45263474
+Time Elapsed: 0.171 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 182
+
+MOVES MADE SO FAR: 182
+MOVE PLAYED BY BOT: Queen - Move: 'f7e8' : EVALUATION: 2344
+ITERATIONS TO FIND OPTIMAL MOVE: 45382565
+Time Elapsed: 0.2 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 184
+
+MOVES MADE SO FAR: 184
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 2342
+ITERATIONS TO FIND OPTIMAL MOVE: 45484795
+Time Elapsed: 0.166 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 186
+
+MOVES MADE SO FAR: 186
+MOVE PLAYED BY BOT: Queen - Move: 'f7e8' : EVALUATION: 2344
+ITERATIONS TO FIND OPTIMAL MOVE: 45603886
+Time Elapsed: 0.194 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 188
+
+MOVES MADE SO FAR: 188
+MOVE PLAYED BY BOT: Queen - Move: 'e8f7' : EVALUATION: 2342
+ITERATIONS TO FIND OPTIMAL MOVE: 45729830
+Time Elapsed: 0.211 seconds
+
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Black King - WHITE: 1 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 0 | BLACK: 0
+PIECE: Null - WHITE: 2 | BLACK: 0
+Error: AudioFileOpen failed ('wht?')
+Game Over: Repetition
+Error: AudioFileOpen failed ('wht?')

@@ -1,34 +1,34 @@
 using System;
 using ChessChallenge.API;
+using static Metaweights;
 using System.Collections.Generic;
 
 
 // PinChess Bot Implementation
 public class MyBot : IChessBot
 {
-    readonly int depth = 7;
-
-    readonly float endgameWeight = 0F;
+    readonly int depth = 6;  
 
     int iterations = 0;
 
     public Move Think(Board board, Timer timer)
     {
-        Console.WriteLine("PLY #: {0}", board.PlyCount);
+        
         // Alfa-Beta Enhanced Pruning Execution
-        (int val, Move move) = AlfaBetaEnhanced(board, depth, int.MinValue, int.MaxValue);
+       (int val, Move move) = AlfaBetaEnhanced(board, depth, int.MinValue, int.MaxValue);
 
         // Alfa-Beta Pruning Classic Execution
-        // (int val, Move move) = AlfaBeta(board, depth, int.MinValue, int.MaxValue);
+        //(int val, Move move) = AlfaBeta(board, depth, int.MinValue, int.MaxValue);
 
         // Minimax Execution
         // (int val, Move move) = Minimax(board, depth);
 
+        Console.WriteLine("\nPLY #: {0}", board.PlyCount);
+        Console.WriteLine("EG WEIGHT: {0}", endgameWeight);
         Console.WriteLine("MOVE PLAYED BY BOT: {0} - {1} : EVALUATION: {2}", move.MovePieceType, move, val);
         Console.WriteLine("ITERATIONS TO FIND OPTIMAL MOVE: {0}", iterations);
         Console.WriteLine("Time Elapsed: {0} seconds\n",(double) timer.MillisecondsElapsedThisTurn / 1000);
-        // board.ForceKingToCornerEndgameEval();
-        board.UpdateEndgameWeight(endgameWeight);
+        board.UpdateEndgameWeight();
         return move;
     }
 
@@ -50,7 +50,7 @@ public class MyBot : IChessBot
             (int val, Move _) = Minimax(board, depth-1);
             board.UndoMove(move);
 
-            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove);
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -84,11 +84,13 @@ public class MyBot : IChessBot
         foreach (Move move in board.GetLegalMoves())
         {
             iterations++;
+            // Always play checkmate in one
+            if (MoveIsCheckmate(board, move)){best_move = move; break;}
             board.MakeMove(move);
             (int val, Move _) = AlfaBeta(board, depth-1, alpha, beta);
             board.UndoMove(move);
 
-            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove);
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -97,7 +99,7 @@ public class MyBot : IChessBot
                     best_move = move;
                 }
                 alpha = Math.Max(alpha, val);
-                if (alpha >= beta){break;}
+                if (alpha >= beta){continue;}
             }
             else
             {
@@ -107,7 +109,7 @@ public class MyBot : IChessBot
                     best_move = move;
                 }
                 beta = Math.Min(beta, val);
-                if (alpha >= beta){break;}
+                if (alpha >= beta){continue;}
             }
         }
         return (best_value, best_move);
@@ -134,11 +136,14 @@ public class MyBot : IChessBot
         {
             int val = t.Item1; Move move = t.Item2;
             iterations++;
+
+            // Always play checkmate in one
+            if (MoveIsCheckmate(board, move)){best_move = move; break;}
             board.MakeMove(move);
             (val, Move _) = AlfaBetaEnhanced(board, depth-1, alpha, beta);
             board.UndoMove(move);
 
-            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove);
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -171,14 +176,24 @@ public class MyBot : IChessBot
             board.MakeMove(move);
             val += board.Evaluate();
             board.UndoMove(move);
-            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove);
             ordered_moves.Add(new Tuple<int, Move>(val, move));
         }
         ordered_moves.Sort((x, y) => y.Item1.CompareTo(x.Item1));
         if (reverse) {ordered_moves.Reverse();}
-        // foreach ((int val, Move move) in ordered_moves){
-        //     Console.WriteLine("ORDER MOVES: {0} | {1}", val, move);    
-        // }
+        Console.WriteLine("\nPLAYER: {0}", board.IsWhiteToMove);
+        foreach ((int val, Move move) in ordered_moves){
+            Console.WriteLine("ORDER MOVES: {0} | {1}", val, move);    
+        }
         return ordered_moves;
+    }
+
+    // Test if this move gives checkmate
+    private bool MoveIsCheckmate(Board board, Move move)
+    {
+        board.MakeMove(move);
+        bool isMate = board.IsInCheckmate();
+        board.UndoMove(move);
+        return isMate;
     }
 }

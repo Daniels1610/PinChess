@@ -404,5 +404,3 @@ FodyWeavers.xsd
 .DS_Store
 
 avg.py
-*.txt
-*.csv
