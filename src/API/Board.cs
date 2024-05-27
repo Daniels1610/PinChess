@@ -1,7 +1,10 @@
+using System.Linq;
+
 namespace ChessChallenge.API
 {
 	using ChessChallenge.Application.APIHelpers;
 	using static PieceSquareTables;
+	using static Metaweights;
 	using ChessChallenge.Chess;
 	using System;
 	using System.Collections.Generic;
@@ -26,8 +29,12 @@ namespace ChessChallenge.API
 		int cachedMoveCount;
 		int depth;
 
-		// Piece values: null, pawn, knight, bishop, rook, queen, king
-        static readonly int[] pieceValues = { 0, 10, 30, 30, 50, 90, 1000 };
+
+		// Piece Values: null, pawn, knight, bishop, rook, queen, king
+        public static readonly int[] pieceValues = { 0, 100, 300, 320, 500, 900, 10000};
+
+        // Piece Types
+		public readonly string[] typePieces = {"Pawns", "Knights", "Bishops", "Queen", "King"};
 
         /// <summary>
         /// Create a new board. Note: this should not be used in the challenge,
@@ -496,20 +503,35 @@ namespace ChessChallenge.API
             return material;
         }
 
-		static int[,] GetSquareTable(Move move)
+		static int[,] GetMiddlegameTable(Move move)
 		{
-			if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
-			else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
-			else if (move.MovePieceType.Equals(PieceType.Bishop)){return BishopTable;}
-			else if (move.MovePieceType.Equals(PieceType.Rook)){return RookTable;}
-			else if (move.MovePieceType.Equals(PieceType.Queen)){return QueenTable;}
-			else{return KingTable;}
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return mg_PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return mg_KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return mg_BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return mg_RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return mg_QueenTable;}
+			else{return mg_KingTable;}
+		}
+
+		static int[,] GetEndgameTable(Move move)
+		{
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return eg_PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return eg_KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return eg_BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return eg_RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return eg_QueenTable;}
+			else{return eg_KingTable;}
 		}
 
 		public int PestoEvaluation(Move move, bool player)
 	    {
-			int evaluation = 0;
-			int[,] SquareTable = GetSquareTable(move);
+			int evaluation = 0; int[,] SquareTable;
+			if (endgameWeight >= 3.0F) {
+				evaluation += ForceKingToCornerEndgameEval();
+				SquareTable = GetEndgameTable(move);
+			}
+			else {SquareTable = GetMiddlegameTable(move);}
+
 			if (player)
 			{
 				evaluation += SquareTable[SquareTable.GetUpperBound(0) + move.TargetSquare.Rank * -1, move.TargetSquare.File];
@@ -519,5 +541,58 @@ namespace ChessChallenge.API
 			}
 			return evaluation;
 	    }
+
+		public int ForceKingToCornerEndgameEval() {
+			int evaluation = 0; 
+			Square whiteKing = GetKingSquare(true);
+			Square blackKing = GetKingSquare(false);
+
+			int opponentKingRank, opponentKingFile;
+			int friendlyKingRank, friendlyKingFile;
+
+			// OpponentColour 8: Opponent is White
+			// OpponentColour 0: Opponent is Black
+
+			if (board.OpponentColour == 8) {
+				opponentKingRank = whiteKing.Rank; opponentKingFile = whiteKing.File;
+				friendlyKingRank = blackKing.Rank; friendlyKingFile = blackKing.File;
+			} else {
+				opponentKingRank = blackKing.Rank; opponentKingFile = blackKing.File;
+				friendlyKingRank = whiteKing.Rank; friendlyKingFile = whiteKing.File;
+			}
+
+			int opponentKingDstToCentreFile = Math.Max(3 - opponentKingFile, opponentKingFile - 4);
+			int opponentKingDstToCentreRank = Math.Max(3 - opponentKingRank, opponentKingRank - 4);
+			int opponentKingDstFromCentre =  opponentKingDstToCentreFile + opponentKingDstToCentreRank;
+			evaluation += opponentKingDstFromCentre;
+
+			int dstBetweenKingsFile = Math.Abs(friendlyKingFile - opponentKingFile);
+			int dstBetweenKingsRank = Math.Abs(friendlyKingRank - opponentKingRank);
+			int dstBetweenKings = dstBetweenKingsFile + dstBetweenKingsRank;
+			
+			// Console.WriteLine("WHITE KING SQUARE - RANK: {0} FILE: {1}", whiteKing.Rank, whiteKing.File);
+			// Console.WriteLine("BLACK KING SQUARE - RANK: {0} FILE: {1}", blackKing.Rank, blackKing.File);
+			evaluation += 14 - dstBetweenKings;
+
+			return (int)(evaluation * 10 * endgameWeight);
+		}
+
+		public float UpdateEndgameWeight(){
+			PieceList[] whitePieces = GetAllPieceLists().Skip(0).Take(5).ToArray();
+			PieceList[] blackPieces = GetAllPieceLists().Skip(6).Take(11).ToArray();
+            
+			if ((whitePieces[0].Count <= 4 || blackPieces[0].Count <= 4) && !endgamePawn) {endgameWeight += 1.525F; endgamePawn = true;}
+			else if ((whitePieces[1].Count <= 1 || blackPieces[1].Count <= 1) && !endgameKnight) {endgameWeight += 1.225F; endgameKnight = true;}
+			else if ((whitePieces[2].Count <= 1 || blackPieces[2].Count <= 1) && !endgameBishop) {endgameWeight += 1.225F; endgameBishop = true;}
+			else if ((whitePieces[3].Count <= 1 || blackPieces[3].Count <= 1) && !endgameRook) {endgameWeight += 1.225F; endgameRook = true;}
+			else if ((whitePieces[4].Count == 0 || blackPieces[4].Count == 0) && !endgameQueen) {endgameWeight += 2.250F; endgameQueen = true;}
+
+			for (int i = 0; i < 5; i++) {
+				Console.WriteLine("PIECE: {0} - WHITE: {1} | BLACK: {2}", typePieces[i], 
+				whitePieces[i].Count, blackPieces[i].Count);
+			}
+
+			return endgameWeight;
+		}
     }
 }

@@ -402,3 +402,5 @@ FodyWeavers.xsd
 
 # Generate by MacOS
 .DS_Store
+
+avg.py
