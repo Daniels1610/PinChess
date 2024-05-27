@@ -50,7 +50,7 @@ public class MyBot : IChessBot
             (int val, Move _) = Minimax(board, depth-1);
             board.UndoMove(move);
 
-            val += board.PestoEvaluation(move, board.IsWhiteToMove);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -88,7 +88,7 @@ public class MyBot : IChessBot
             (int val, Move _) = AlfaBeta(board, depth-1, alpha, beta);
             board.UndoMove(move);
 
-            val += board.PestoEvaluation(move, board.IsWhiteToMove);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -138,7 +138,7 @@ public class MyBot : IChessBot
             (val, Move _) = AlfaBetaEnhanced(board, depth-1, alpha, beta);
             board.UndoMove(move);
 
-            val += board.PestoEvaluation(move, board.IsWhiteToMove);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -171,7 +171,7 @@ public class MyBot : IChessBot
             board.MakeMove(move);
             val += board.Evaluate();
             board.UndoMove(move);
-            val += board.PestoEvaluation(move, board.IsWhiteToMove);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
             ordered_moves.Add(new Tuple<int, Move>(val, move));
         }
         ordered_moves.Sort((x, y) => y.Item1.CompareTo(x.Item1));

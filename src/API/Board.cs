@@ -500,28 +500,30 @@ namespace ChessChallenge.API
 
 		static int[,] GetMiddlegameTable(Move move)
 		{
-			if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
-			else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
-			else if (move.MovePieceType.Equals(PieceType.Bishop)){return BishopTable;}
-			else if (move.MovePieceType.Equals(PieceType.Rook)){return RookTable;}
-			else if (move.MovePieceType.Equals(PieceType.Queen)){return QueenTable;}
-			else{return KingTable;}
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return mg_PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return mg_KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return mg_BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return mg_RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return mg_QueenTable;}
+			else{return mg_KingTable;}
 		}
 
 		static int[,] GetEndgameTable(Move move)
 		{
-			if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
-			else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
-			else if (move.MovePieceType.Equals(PieceType.Bishop)){return BishopTable;}
-			else if (move.MovePieceType.Equals(PieceType.Rook)){return RookTable;}
-			else if (move.MovePieceType.Equals(PieceType.Queen)){return QueenTable;}
-			else{return KingTable;}
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return eg_PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return eg_KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return eg_BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return eg_RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return eg_QueenTable;}
+			else{return eg_KingTable;}
 		}
 
 		public int PestoEvaluation(Move move, bool player, float endgameWeight)
 	    {
-			int evaluation = 0;
-			int[,] SquareTable = GetMiddlegameTable(move);
+			int evaluation = 0; int[,] SquareTable;
+			if (endgameWeight >= 3.0F) { SquareTable = GetEndgameTable(move);}
+			else {SquareTable = GetMiddlegameTable(move);}
+			
 			if (player)
 			{
 				evaluation += SquareTable[SquareTable.GetUpperBound(0) + move.TargetSquare.Rank * -1, move.TargetSquare.File];
