@@ -521,7 +521,7 @@ namespace ChessChallenge.API
 		public int PestoEvaluation(Move move, bool player, float endgameWeight)
 	    {
 			int evaluation = 0;
-			int[,] SquareTable = GetSquareTable(move);
+			int[,] SquareTable = GetMiddlegameTable(move);
 			if (player)
 			{
 				evaluation += SquareTable[SquareTable.GetUpperBound(0) + move.TargetSquare.Rank * -1, move.TargetSquare.File];
