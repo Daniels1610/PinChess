@@ -8,9 +8,10 @@ namespace ChessChallenge.API
 	using System;
 	using System.Collections.Generic;
 	using System.Text;
-	
+    using System.Runtime.CompilerServices;
+    using System.Runtime.InteropServices;
 
-	public sealed class Board
+    public sealed class Board
 	{
 		readonly Chess.Board board;
 		readonly APIMoveGen moveGen;
@@ -477,57 +478,101 @@ namespace ChessChallenge.API
 		//   - Pawn Structure
 		//   - Tactics (Gambits, Pins, Forks, Skewers)
 
-		public int Evaluate()
+		public int Evaluate(PieceList capturedMaterial)
 		{
 			int evaluation = 0;
-			int whiteMaterial = CountMaterial(true);
-			int blackMaterial = CountMaterial(false) * -1;
+			int whiteMaterial = CountMaterial(capturedMaterial, true);
+			int blackMaterial = CountMaterial(capturedMaterial, false) * -1;
 			int materialEvaluation = whiteMaterial + blackMaterial;
 			evaluation += materialEvaluation;
 			return evaluation;
 		}
 
-        public int CountMaterial(bool player)
+        public int CountMaterial(PieceList capturedMaterial, bool player)
         {
             int material = 0;
-            material += GetPieceList(PieceType.Pawn, player).Count * pieceValues[1];
-            material += GetPieceList(PieceType.Knight, player).Count * pieceValues[2];
-            material += GetPieceList(PieceType.Bishop, player).Count * pieceValues[3];
-            material += GetPieceList(PieceType.Rook, player).Count * pieceValues[4];
-            material += GetPieceList(PieceType.Queen, player).Count * pieceValues[5];
+			foreach(Piece capturedPiece in capturedMaterial)
+			{
+				int capturedPieceValue = pieceValues[(int)capturedPiece.PieceType];
+				if (player) {
+					material += capturedPieceValue;
+				}
+				else {
+					material += capturedPieceValue*-1;
+				}
+			}
+            // material += GetPieceList(PieceType.Pawn, player).Count * pieceValues[1];
+            // material += GetPieceList(PieceType.Knight, player).Count * pieceValues[2];
+            // material += GetPieceList(PieceType.Bishop, player).Count * pieceValues[3];
+            // material += GetPieceList(PieceType.Rook, player).Count * pieceValues[4];
+            // material += GetPieceList(PieceType.Queen, player).Count * pieceValues[5];
             return material;
         }
 
-		static int[,] GetMiddlegameTable(Move move)
+		public int CapturedMaterial(Move move, bool player)
 		{
-			if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
-			else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
-			else if (move.MovePieceType.Equals(PieceType.Bishop)){return BishopTable;}
-			else if (move.MovePieceType.Equals(PieceType.Rook)){return RookTable;}
-			else if (move.MovePieceType.Equals(PieceType.Queen)){return QueenTable;}
-			else{return KingTable;}
+			if (move.IsCapture) {
+				Piece capturedPiece = GetPiece(move.TargetSquare);
+				int capturedPieceValue = pieceValues[(int)capturedPiece.PieceType];
+				if (player) {return capturedPieceValue;}
+				else {return capturedPieceValue*-1;}
+			}
+			else{return 0;}
 		}
 
-		static int[,] GetEndgameTable(Move move)
+		static int[,] GetOpeningTable(Move move)
 		{
-			if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
-			else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
-			else if (move.MovePieceType.Equals(PieceType.Bishop)){return BishopTable;}
-			else if (move.MovePieceType.Equals(PieceType.Rook)){return RookTable;}
-			else if (move.MovePieceType.Equals(PieceType.Queen)){return QueenTable;}
-			else{return KingTable;}
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return op_PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return op_KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return op_BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return op_RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return op_QueenTable;}
+			else{return mg_KingTable;}
+		}
+
+		public static int[,] GetMiddlegameTable(Move move)
+		{
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return mg_PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return mg_KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return mg_BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return mg_RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return mg_QueenTable;}
+			else{return mg_KingTable;}
+		}
+
+		public static int[,] GetEndgameTable(Move move)
+		{
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return eg_PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return eg_KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return eg_BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return eg_RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return eg_QueenTable;}
+			else{return eg_KingTable;}
 		}
 
 		public int PestoEvaluation(Move move, bool player, float endgameWeight)
 	    {
 			int evaluation = 0;
-			int[,] SquareTable = GetMiddlegameTable(move);
+			int[,] SquareTable;
+			if (GameMoveHistory.Length <= 5)
+			{
+				SquareTable = GetOpeningTable(move);
+			}
+			else
+			{
+				if (endgameWeight >= 3.0F) { SquareTable = GetEndgameTable(move);
+				}
+				else {SquareTable = GetMiddlegameTable(move);
+				}
+			}
+
 			if (player)
 			{
 				evaluation += SquareTable[SquareTable.GetUpperBound(0) + move.TargetSquare.Rank * -1, move.TargetSquare.File];
 			}
 			else {
 				evaluation += SquareTable[move.TargetSquare.Rank, SquareTable.GetUpperBound(0) + move.TargetSquare.File * -1] * -1;
+			
 			}
 			return evaluation;
 	    }
@@ -541,7 +586,7 @@ namespace ChessChallenge.API
 		}
 
 		public float UpdateEndgameWeight(float endgameWeight){
-			PieceList[] whitePieces = GetAllPieceLists().Skip(0).Take(5).ToArray();
+			PieceList[] whitePieces = GetAllPieceLists().Take(5).ToArray();
 			PieceList[] blackPieces = GetAllPieceLists().Skip(6).Take(11).ToArray();
 
 			if (whitePieces[0].Count <= 4 || blackPieces[0].Count <= 4) {endgameWeight += 1.5F;}

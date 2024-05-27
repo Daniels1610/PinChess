@@ -1,12 +1,13 @@
 using System;
 using ChessChallenge.API;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 
 // PinChess Bot Implementation
 public class MyBot : IChessBot
 {
-    readonly int depth = 7;
+    readonly int DEPTH = 5;
 
     readonly float endgameWeight = 0F;
 
@@ -16,14 +17,15 @@ public class MyBot : IChessBot
     {
         Console.WriteLine("PLY #: {0}", board.PlyCount);
         // Alfa-Beta Enhanced Pruning Execution
-        (int val, Move move) = AlfaBetaEnhanced(board, depth, int.MinValue, int.MaxValue);
+        (int val, Move move) = AlfaBetaEnhanced(board, DEPTH, int.MinValue, int.MaxValue);
 
         // Alfa-Beta Pruning Classic Execution
-        // (int val, Move move) = AlfaBeta(board, depth, int.MinValue, int.MaxValue);
+        //(int val, Move move) = AlfaBeta(board, DEPTH, int.MinValue, int.MaxValue);
 
         // Minimax Execution
-        // (int val, Move move) = Minimax(board, depth);
+        // (int val, Move move) = Minimax(board, 0);
 
+        Console.WriteLine("\nMOVES MADE SO FAR: {0}", board.GameMoveHistory.Length);
         Console.WriteLine("MOVE PLAYED BY BOT: {0} - {1} : EVALUATION: {2}", move.MovePieceType, move, val);
         Console.WriteLine("ITERATIONS TO FIND OPTIMAL MOVE: {0}", iterations);
         Console.WriteLine("Time Elapsed: {0} seconds\n",(double) timer.MillisecondsElapsedThisTurn / 1000);
@@ -35,7 +37,7 @@ public class MyBot : IChessBot
 
     private (int, Move) Minimax(Board board, int depth) 
     {
-        if (board.IsInCheckmate() || board.IsInStalemate() || depth == 0) 
+        if (board.IsInCheckmate() || board.IsInStalemate() || depth == DEPTH) 
         {
             return (board.Evaluate(), Move.NullMove);
         }
@@ -47,10 +49,17 @@ public class MyBot : IChessBot
         {
             iterations++;
             board.MakeMove(move);
-            (int val, Move _) = Minimax(board, depth-1);
+            (int val, Move _) = Minimax(board, depth+1);
             board.UndoMove(move);
 
+<<<<<<< Updated upstream
             val += board.PestoEvaluation(move, board.IsWhiteToMove);
+=======
+            board.MakeMove(move);
+            val += board.CapturedMaterial(move, board.IsWhiteToMove);
+            board.UndoMove(move);
+            val += board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
+>>>>>>> Stashed changes
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -124,7 +133,6 @@ public class MyBot : IChessBot
         Move[] moves = board.GetLegalMoves();
 
         // Order moves based on heuristic criteria
-        // Console.WriteLine("ORDER MOVES FOR : {0}", board.IsWhiteToMove);
         List<Tuple<int, Move>> ordered_moves = board.IsWhiteToMove ? OrderMoves(board, moves) : OrderMoves(board, moves, reverse:true);
 
         int best_value = (board.PlyCount % 2 != 0) ? int.MaxValue: int.MinValue;
@@ -132,13 +140,19 @@ public class MyBot : IChessBot
 
         foreach (Tuple<int, Move> t in ordered_moves)
         {
-            int val = t.Item1; Move move = t.Item2;
+            int pesto = 0;
+            Move move = t.Item2;
             iterations++;
             board.MakeMove(move);
-            (val, Move _) = AlfaBetaEnhanced(board, depth-1, alpha, beta);
+            (int val, Move _) = AlfaBetaEnhanced(board, depth-1, alpha, beta);
             board.UndoMove(move);
 
+<<<<<<< Updated upstream
             val += board.PestoEvaluation(move, board.IsWhiteToMove);
+=======
+            pesto = board.PestoEvaluation(move, board.IsWhiteToMove, endgameWeight);
+            val += pesto;
+>>>>>>> Stashed changes
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -146,7 +160,7 @@ public class MyBot : IChessBot
                     best_value = val;
                     best_move = move;
                 }
-                alpha = Math.Max(alpha, val);
+                alpha = Math.Max(alpha, best_value);
                 if (alpha >= beta){break;}
             }
             else
@@ -156,7 +170,7 @@ public class MyBot : IChessBot
                     best_value = val;
                     best_move = move;
                 }
-                beta = Math.Min(beta, val);
+                beta = Math.Min(beta, best_value);
                 if (alpha >= beta){break;}
             }
         }
