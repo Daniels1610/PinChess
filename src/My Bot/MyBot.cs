@@ -6,7 +6,10 @@ using System.Collections.Generic;
 // PinChess Bot Implementation
 public class MyBot : IChessBot
 {
-    readonly int depth = 6;
+    readonly int depth = 7;
+
+    readonly float endgameWeight = 0F;
+
     int iterations = 0;
 
     public Move Think(Board board, Timer timer)
@@ -24,6 +27,8 @@ public class MyBot : IChessBot
         Console.WriteLine("MOVE PLAYED BY BOT: {0} - {1} : EVALUATION: {2}", move.MovePieceType, move, val);
         Console.WriteLine("ITERATIONS TO FIND OPTIMAL MOVE: {0}", iterations);
         Console.WriteLine("Time Elapsed: {0} seconds\n",(double) timer.MillisecondsElapsedThisTurn / 1000);
+        // board.ForceKingToCornerEndgameEval();
+        board.UpdateEndgameWeight(endgameWeight);
         return move;
     }
 
@@ -119,7 +124,7 @@ public class MyBot : IChessBot
         Move[] moves = board.GetLegalMoves();
 
         // Order moves based on heuristic criteria
-        Console.WriteLine("ORDER MOVES FOR : {0}", board.IsWhiteToMove);
+        // Console.WriteLine("ORDER MOVES FOR : {0}", board.IsWhiteToMove);
         List<Tuple<int, Move>> ordered_moves = board.IsWhiteToMove ? OrderMoves(board, moves) : OrderMoves(board, moves, reverse:true);
 
         int best_value = (board.PlyCount % 2 != 0) ? int.MaxValue: int.MinValue;
@@ -171,9 +176,9 @@ public class MyBot : IChessBot
         }
         ordered_moves.Sort((x, y) => y.Item1.CompareTo(x.Item1));
         if (reverse) {ordered_moves.Reverse();}
-        foreach ((int val, Move move) in ordered_moves){
-            Console.WriteLine("ORDER MOVES: {0} | {1}", val, move);    
-        }
+        // foreach ((int val, Move move) in ordered_moves){
+        //     Console.WriteLine("ORDER MOVES: {0} | {1}", val, move);    
+        // }
         return ordered_moves;
     }
 }

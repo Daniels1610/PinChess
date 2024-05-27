@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace ChessChallenge.API
 {
 	using ChessChallenge.Application.APIHelpers;
@@ -27,7 +29,7 @@ namespace ChessChallenge.API
 		int depth;
 
 		// Piece values: null, pawn, knight, bishop, rook, queen, king
-        public static readonly int[] pieceValues = { 0, 100, 300, 320, 500, 900, 1000};
+        public static readonly int[] pieceValues = { 0, 100, 300, 320, 500, 900, 10000};
 
         /// <summary>
         /// Create a new board. Note: this should not be used in the challenge,
@@ -496,7 +498,7 @@ namespace ChessChallenge.API
             return material;
         }
 
-		static int[,] GetSquareTable(Move move)
+		static int[,] GetMiddlegameTable(Move move)
 		{
 			if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
 			else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
@@ -506,7 +508,17 @@ namespace ChessChallenge.API
 			else{return KingTable;}
 		}
 
-		public int PestoEvaluation(Move move, bool player)
+		static int[,] GetEndgameTable(Move move)
+		{
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return QueenTable;}
+			else{return KingTable;}
+		}
+
+		public int PestoEvaluation(Move move, bool player, float endgameWeight)
 	    {
 			int evaluation = 0;
 			int[,] SquareTable = GetSquareTable(move);
@@ -519,5 +531,30 @@ namespace ChessChallenge.API
 			}
 			return evaluation;
 	    }
+
+		public int ForceKingToCornerEndgameEval(float endgameWeight) {
+			int evaluation = 0;
+			Square whiteKing = GetKingSquare(true);
+			Square blackKing = GetKingSquare(false);
+			Console.WriteLine("KING SQUARE - RANK: {0} FILE: {1}", whiteKing.Rank, whiteKing.File);
+			return evaluation;
+		}
+
+		public float UpdateEndgameWeight(float endgameWeight){
+			PieceList[] whitePieces = GetAllPieceLists().Skip(0).Take(5).ToArray();
+			PieceList[] blackPieces = GetAllPieceLists().Skip(6).Take(11).ToArray();
+
+			if (whitePieces[0].Count <= 4 || blackPieces[0].Count <= 4) {endgameWeight += 1.5F;}
+			else if (whitePieces[1].Count <= 1 || blackPieces[1].Count <= 1) {endgameWeight += 1.0F;}
+			else if (whitePieces[2].Count <= 1 || blackPieces[2].Count <= 1) {endgameWeight += 1.0F;}
+			else if (whitePieces[3].Count <= 1 || blackPieces[3].Count <= 1) {endgameWeight += 1.0F;}
+			else if (whitePieces[4].Count == 0 || blackPieces[4].Count == 0) {endgameWeight += 2.0F;}
+
+			for (int i = 0; i < whitePieces.Length; i++) {
+				Console.WriteLine("PIECE: {0} - WHITE: {1} | BLACK: {2}", whitePieces[i].GetPiece(i), whitePieces[i].Count, blackPieces[i].Count);
+			}
+
+			return endgameWeight;
+		}
     }
 }
