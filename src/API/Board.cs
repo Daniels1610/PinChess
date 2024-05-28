@@ -495,6 +495,16 @@ namespace ChessChallenge.API
         public int CountMaterial(bool player)
         {
             int material = 0;
+			// foreach(Piece capturedPiece in capturedMaterial)
+			// {
+			// 	int capturedPieceValue = pieceValues[(int)capturedPiece.PieceType];
+			// 	if (player) {
+			// 		material += capturedPieceValue;
+			// 	}
+			// 	else {
+			// 		material += capturedPieceValue*-1;
+			// 	}
+			// }
             material += GetPieceList(PieceType.Pawn, player).Count * pieceValues[1];
             material += GetPieceList(PieceType.Knight, player).Count * pieceValues[2];
             material += GetPieceList(PieceType.Bishop, player).Count * pieceValues[3];
@@ -502,6 +512,27 @@ namespace ChessChallenge.API
             material += GetPieceList(PieceType.Queen, player).Count * pieceValues[5];
             return material;
         }
+
+		public int CapturedMaterial(Move move, bool player)
+		{
+			if (move.IsCapture) {
+				Piece capturedPiece = GetPiece(move.TargetSquare);
+				int capturedPieceValue = pieceValues[(int)capturedPiece.PieceType];
+				if (player) {return capturedPieceValue;}
+				else {return capturedPieceValue*-1;}
+			}
+			else{return 0;}
+		}
+
+		static int[,] GetOpeningTable(Move move)
+		{
+			if (move.MovePieceType.Equals(PieceType.Pawn)){return op_PawnTable;}
+			else if (move.MovePieceType.Equals(PieceType.Knight)){return op_KnightTable;}
+			else if (move.MovePieceType.Equals(PieceType.Bishop)){return op_BishopTable;}
+			else if (move.MovePieceType.Equals(PieceType.Rook)){return op_RookTable;}
+			else if (move.MovePieceType.Equals(PieceType.Queen)){return op_QueenTable;}
+			else{return mg_KingTable;}
+		}
 
 		static int[,] GetMiddlegameTable(Move move)
 		{
@@ -524,13 +555,20 @@ namespace ChessChallenge.API
 		}
 
 		public int PestoEvaluation(Move move, bool player)
-	    {
-			int evaluation = 0; int[,] SquareTable;
-			if (endgameWeight >= 3.0F) {
-				evaluation += ForceKingToCornerEndgameEval();
-				SquareTable = GetEndgameTable(move);
+		{
+			int evaluation = 0;
+			int[,] SquareTable;
+			if (GameMoveHistory.Length <= 5)
+			{
+				SquareTable = GetOpeningTable(move);
 			}
-			else {SquareTable = GetMiddlegameTable(move);}
+			else
+			{
+				if (endgameWeight >= 3.0F) { SquareTable = GetEndgameTable(move);
+				}
+				else {SquareTable = GetMiddlegameTable(move);
+				}
+			}
 
 			if (player)
 			{
@@ -538,9 +576,11 @@ namespace ChessChallenge.API
 			}
 			else {
 				evaluation += SquareTable[move.TargetSquare.Rank, SquareTable.GetUpperBound(0) + move.TargetSquare.File * -1] * -1;
+			
 			}
 			return evaluation;
 	    }
+
 
 		public int ForceKingToCornerEndgameEval() {
 			int evaluation = 0; 

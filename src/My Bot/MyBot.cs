@@ -7,7 +7,7 @@ using System.Collections.Generic;
 // PinChess Bot Implementation
 public class MyBot : IChessBot
 {
-    readonly int depth = 6;  
+    readonly int depth = 7;  
 
     int iterations = 0;
 
@@ -15,10 +15,10 @@ public class MyBot : IChessBot
     {
         
         // Alfa-Beta Enhanced Pruning Execution
-       (int val, Move move) = AlfaBetaEnhanced(board, depth, int.MinValue, int.MaxValue);
+        (int val, Move move) = AlfaBetaEnhanced(board, depth, int.MinValue, int.MaxValue);
 
         // Alfa-Beta Pruning Classic Execution
-        //(int val, Move move) = AlfaBeta(board, depth, int.MinValue, int.MaxValue);
+        // (int val, Move move) = AlfaBeta(board, depth, int.MinValue, int.MaxValue);
 
         // Minimax Execution
         // (int val, Move move) = Minimax(board, depth);
@@ -91,6 +91,7 @@ public class MyBot : IChessBot
             board.UndoMove(move);
 
             val += board.PestoEvaluation(move, board.IsWhiteToMove);
+            val += board.CapturedMaterial(move, board.IsWhiteToMove);
             if (board.IsWhiteToMove)
             {
                 if (val > best_value)
@@ -138,7 +139,7 @@ public class MyBot : IChessBot
             iterations++;
 
             // Always play checkmate in one
-            if (MoveIsCheckmate(board, move)){best_move = move; break;}
+            // if (MoveIsCheckmate(board, move)){best_move = move; break;}
             board.MakeMove(move);
             (val, Move _) = AlfaBetaEnhanced(board, depth-1, alpha, beta);
             board.UndoMove(move);
@@ -181,10 +182,10 @@ public class MyBot : IChessBot
         }
         ordered_moves.Sort((x, y) => y.Item1.CompareTo(x.Item1));
         if (reverse) {ordered_moves.Reverse();}
-        Console.WriteLine("\nPLAYER: {0}", board.IsWhiteToMove);
-        foreach ((int val, Move move) in ordered_moves){
-            Console.WriteLine("ORDER MOVES: {0} | {1}", val, move);    
-        }
+        // Console.WriteLine("\nPLAYER: {0}", board.IsWhiteToMove);
+        // foreach ((int val, Move move) in ordered_moves){
+        //     Console.WriteLine("ORDER MOVES: {0} | {1}", val, move);    
+        // }
         return ordered_moves;
     }
 
