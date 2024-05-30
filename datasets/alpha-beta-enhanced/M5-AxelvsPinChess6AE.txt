@@ -1,0 +1,183 @@
+PLY #: 0
+
+MOVES MADE SO FAR: 0
+MOVE PLAYED BY BOT: Pawn - Move: 'd2d4' : EVALUATION: -5
+ITERATIONS TO FIND OPTIMAL MOVE: 67559
+Time Elapsed: 0.659 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 2
+
+MOVES MADE SO FAR: 2
+MOVE PLAYED BY BOT: Knight - Move: 'g1f3' : EVALUATION: -15
+ITERATIONS TO FIND OPTIMAL MOVE: 214796
+Time Elapsed: 1.49 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 4
+
+MOVES MADE SO FAR: 4
+MOVE PLAYED BY BOT: Bishop - Move: 'c1f4' : EVALUATION: -40
+ITERATIONS TO FIND OPTIMAL MOVE: 656367
+Time Elapsed: 3.97 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 6
+
+MOVES MADE SO FAR: 6
+MOVE PLAYED BY BOT: Bishop - Move: 'f4e3' : EVALUATION: -106
+ITERATIONS TO FIND OPTIMAL MOVE: 1145337
+Time Elapsed: 4.48 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 8
+
+MOVES MADE SO FAR: 8
+MOVE PLAYED BY BOT: Bishop - Move: 'e3g5' : EVALUATION: -54
+ITERATIONS TO FIND OPTIMAL MOVE: 1446142
+Time Elapsed: 2.629 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 10
+
+MOVES MADE SO FAR: 10
+MOVE PLAYED BY BOT: Knight - Move: 'b1d2' : EVALUATION: 17
+ITERATIONS TO FIND OPTIMAL MOVE: 1787039
+Time Elapsed: 3.311 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 12
+
+MOVES MADE SO FAR: 12
+MOVE PLAYED BY BOT: Pawn - Move: 'g2g4' : EVALUATION: -4
+ITERATIONS TO FIND OPTIMAL MOVE: 2168958
+Time Elapsed: 3.802 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 14
+
+MOVES MADE SO FAR: 14
+MOVE PLAYED BY BOT: Knight - Move: 'd2b3' : EVALUATION: -18
+ITERATIONS TO FIND OPTIMAL MOVE: 2798056
+Time Elapsed: 5.153 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 16
+
+MOVES MADE SO FAR: 16
+MOVE PLAYED BY BOT: Knight - Move: 'f3e5' : EVALUATION: -69
+ITERATIONS TO FIND OPTIMAL MOVE: 2974873
+Time Elapsed: 2.072 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: White Knight - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 18
+
+MOVES MADE SO FAR: 18
+MOVE PLAYED BY BOT: Bishop - Move: 'g5f6' : EVALUATION: -150
+ITERATIONS TO FIND OPTIMAL MOVE: 3061722
+Time Elapsed: 1.14 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: Black Knight - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 20
+
+MOVES MADE SO FAR: 20
+MOVE PLAYED BY BOT: Pawn - Move: 'e2e4' : EVALUATION: -286
+ITERATIONS TO FIND OPTIMAL MOVE: 3229395
+Time Elapsed: 1.642 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: Black Knight - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 22
+
+MOVES MADE SO FAR: 22
+MOVE PLAYED BY BOT: King - Move: 'e1e2' : EVALUATION: -631
+ITERATIONS TO FIND OPTIMAL MOVE: 3399675
+Time Elapsed: 0.644 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Error: AudioFileOpen failed ('wht?')
+PLY #: 24
+
+MOVES MADE SO FAR: 24
+MOVE PLAYED BY BOT: King - Move: 'e2e3' : EVALUATION: -544
+ITERATIONS TO FIND OPTIMAL MOVE: 3749403
+Time Elapsed: 1.313 seconds
+
+PIECE: White Pawn - WHITE: 8 | BLACK: 8
+PIECE: Null - WHITE: 1 | BLACK: 1
+PIECE: White Rook - WHITE: 1 | BLACK: 2
+PIECE: White Rook - WHITE: 2 | BLACK: 2
+PIECE: White Rook - WHITE: 1 | BLACK: 1
+Error: AudioFileOpen failed ('wht?')
+Game Over: WhiteIsMated
+Error: AudioFileOpen failed ('wht?')

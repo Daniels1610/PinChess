@@ -129,7 +129,7 @@ namespace ChessChallenge.Application
                 // Sleep thread until notified
                 botTaskWaitHandle.WaitOne();
                 // Get bot move
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 if (threadID == gameID)
                 {
                     var move = GetBotMove();

@@ -14,7 +14,7 @@ namespace ChessChallenge.API
 		public int Rank => Chess.BoardHelper.RankIndex(Index);
         /// <summary>
         /// Value from 0 to 63. The values map to the board like so:
-		/// 0 – 7 : a1 – h1, 8 – 15 : a2 – h2, ..., 56 – 63 : a8 – h8
+		/// 0 ï¿½ 7 : a1 ï¿½ h1, 8 ï¿½ 15 : a2 ï¿½ h2, ..., 56 ï¿½ 63 : a8 ï¿½ h8
         /// </summary>
         public readonly int Index;
 
@@ -56,6 +56,8 @@ namespace ChessChallenge.API
         public bool Equals(Square other) => Index == other.Index;
         public static bool operator ==(Square lhs, Square rhs) => lhs.Equals(rhs);
         public static bool operator !=(Square lhs, Square rhs) => !lhs.Equals(rhs);
+
+        #nullable enable
         public override bool Equals(object? obj) => base.Equals(obj);
         public override int GetHashCode() => base.GetHashCode();
     }
